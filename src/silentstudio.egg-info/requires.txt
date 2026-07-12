@@ -1,5 +1,0 @@
-requests>=2.25.0
-colorama>=0.4.0
-
-[window]
-PySide6>=6.4.0
