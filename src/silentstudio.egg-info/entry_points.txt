@@ -1,0 +1,2 @@
+[console_scripts]
+silentstudio = silentstudio.cli:main
