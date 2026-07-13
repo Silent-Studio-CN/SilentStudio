@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "silentstudio"
-version = "0.1.0"
+version = "0.1.5"
 description = "SilentStudio CLI - 让开发者体验更好一点"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -26,6 +26,8 @@ window = ["PySide6>=6.4.0"]
 
 [project.scripts]
 silentstudio = "silentstudio.cli:main"
+ssc = "silentstudio.cli:main"
+sscli = "silentstudio.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

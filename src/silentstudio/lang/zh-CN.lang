@@ -1,0 +1,139 @@
+# SilentStudio 中文语言文件
+
+# ===== CLI 通用 =====
+cli_title = SilentStudio CLI v{version}
+cli_copyright = © SilentStudio All Rights Reserved.
+cli_homepage = https://github.com/Silent-Studio-CN/SilentStudioCLI
+cli_help_hint = 使用 -h 或 --help 查看完整帮助
+cli_help_hint_en = Use -h or --help for full help
+cli_making = 让开发者体验更好一点。
+cli_making_en = Making developer experience better.
+cli_usage = 用法:
+cli_examples = 示例:
+cli_more_info = 更多信息:
+
+# ===== CLI 命令 =====
+cmd_help = 显示此帮助信息
+cmd_version = 显示版本号
+cmd_window = 启动 GUI 界面（0.1.5 暂不支持）
+cmd_new = 创建新项目
+cmd_install_pkg = 查询并安装生态库
+cmd_install_list = 列出已安装的库
+cmd_install_list_all = 列出所有已安装的库
+cmd_install_pkg_specific = 安装指定包
+cmd_uninstall = 卸载指定包
+cmd_ping = 检测所有索引源的可用性
+cmd_ls = 列出当前目录内容
+cmd_dir = 列出当前目录内容 (Windows)
+cmd_pwd = 显示当前工作目录
+
+# ===== CLI 示例 =====
+example_new = silentstudio new my-app -l java
+example_install = silentstudio slimemold
+example_list = silentstudio install list
+example_install_yaml = silentstudio install yaml
+example_uninstall = silentstudio uninstall requests
+example_ping = silentstudio ping
+example_ls = silentstudio ls
+
+# ===== CLI 卸载警告 =====
+uninstall_warning_title = ⚠️ 警告: {pkg} 是 SilentStudio 的核心依赖
+uninstall_warning_desc = 卸载后 SilentStudio 将无法正常工作
+uninstall_warning_continue = 是否继续? (y/N): 
+uninstall_cancelled = ❌ 已取消
+uninstall_success = ✅ 成功卸载 {pkg}
+uninstall_failed = ❌ 卸载失败: {error}
+uninstall_tip = 💡 提示: 如果 SilentStudio 出现问题，请执行: pip install {pkg}
+
+# ===== CLI ping =====
+ping_detecting = 📡 正在检测索引源可用性...
+ping_response = 响应时间: {time}ms | 状态码: {code}
+ping_error = 错误: {error}
+ping_available = ✅ 可用: {count} 个
+ping_unavailable = ❌ 不可用: {count} 个
+ping_recommend = 💡 推荐使用: {url}
+ping_no_available = ❌ 没有可用的索引源
+
+# ===== CLI ls =====
+ls_total = 共 {count} 项
+ls_error = ❌ 列出目录失败: {error}
+
+# ===== GUI 通用 =====
+gui_title = SilentStudio - 包管理器
+gui_loading = 加载中...
+gui_ready = 就绪
+gui_search = 🔍 搜索包名...
+gui_no_packages = 没有找到任何包
+gui_total = 共 {count} 个包
+
+# ===== GUI 导航 =====
+gui_nav_home = 主页
+gui_nav_packages = 包管理
+gui_nav_settings = 设置
+
+# ===== GUI 包卡片 =====
+gui_installed = ✓ 已安装
+gui_not_installed = ✗ 未安装
+gui_updatable = ⬆️ 可更新
+gui_no_description = 暂无描述
+gui_install = 📦 安装
+gui_uninstall = 🗑 卸载
+gui_update = ⬆️ 更新
+gui_detail = 📄 详情
+gui_double_click = 双击查看详情
+
+# ===== GUI 包详情 =====
+gui_detail_title = {name} - 详情
+gui_detail_status = 状态
+gui_detail_version = 版本
+gui_detail_latest = 最新版本
+gui_detail_description = 描述
+gui_detail_author = 作者
+gui_detail_license = 许可证
+gui_detail_homepage = 主页
+gui_detail_path = 安装路径
+gui_detail_unknown = 未知
+gui_detail_not_installed = 未安装
+gui_detail_none = 无
+
+# ===== GUI 安装对话框 =====
+gui_install_title = 安装 {name}
+gui_installing = 正在安装 {name}...
+gui_install_success = ✅ {name} 安装完成
+gui_install_failed = ❌ 安装失败
+gui_close = 关闭
+gui_querying = 📡 正在查询 SilentStudio 索引...
+gui_installing_pkg = 📦 正在安装 {name}...
+gui_error = 错误
+
+# ===== GUI 操作 =====
+gui_action_installing = 正在 {action}...
+gui_action_complete = ✅ {action} 完成
+gui_action_failed = ❌ {action} 失败
+gui_action_success = {action} 成功！
+gui_action_failed_msg = {action} 失败: {error}
+
+# ===== GUI 确认 =====
+gui_confirm_uninstall_title = 确认卸载
+gui_confirm_uninstall_msg = 确定要卸载 {name} 吗？
+gui_confirm_update_title = 确认更新
+gui_confirm_update_msg = 确定要更新 {name} 吗？
+
+# ===== GUI 设置 =====
+gui_settings_title = ⚙️ 设置
+gui_settings_language = 🌐 界面语言
+gui_settings_mirror = 📦 PyPI 镜像源
+gui_settings_auto_check = 🔄 自动检查更新
+gui_settings_auto_install = 📥 自动安装更新
+gui_settings_interval = ⏱ 检查间隔
+gui_settings_hours = 小时
+gui_settings_save = 💾 保存设置
+gui_settings_saved_title = 设置已保存
+gui_settings_saved_content = 设置已保存成功！
+gui_settings_mirror_placeholder = https://pypi.org/simple
+
+# ===== GUI 状态栏 =====
+gui_status_loading = 正在加载包列表...
+gui_status_progress = 加载中... {current}/{total}
+gui_status_loaded = 已加载 {total} 个包
+gui_status_refreshing = 正在 {action}...

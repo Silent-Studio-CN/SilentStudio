@@ -1,3 +1,4 @@
+import argparse
 from typing import Dict, Any
 
 from .config import load_installed
@@ -5,7 +6,7 @@ from .utils import get_pip_packages
 from .utils import get_system_language
 
 
-def format_package_list() -> str:
+def format_package_list(show_all: bool = False) -> str:
     """格式化包列表"""
     lang = get_system_language()
     
@@ -32,76 +33,76 @@ def format_package_list() -> str:
     
     # 构建输出
     lines = []
-    width = 60
     
     if lang == "zh-CN":
-        lines.append("╔" + "═" * width + "╗")
-        lines.append("║" + " 📦 已安装 Python 库".ljust(width) + "║")
-        lines.append("╠" + "═" * width + "╣")
+        lines.append(f"📦 已安装 Python 库 (共 {len(all_pkgs)} 个)")
+        lines.append("")
         
         if silent_pkgs:
-            lines.append(f"║  ✦ SilentStudio 安装 ({len(silent_pkgs)} 个):".ljust(width) + "║")
+            lines.append(f"✦ SilentStudio 安装 ({len(silent_pkgs)} 个):")
             for i, pkg in enumerate(silent_pkgs):
                 name = pkg.get("name", "")
                 version = pkg.get("version", "未知")
-                prefix = "    ├─ " if i < len(silent_pkgs) - 1 else "    └─ "
-                lines.append(f"║  {prefix}{name}".ljust(width - 20) + f"v{version}".rjust(20) + "║")
+                lines.append(f"  {name}  v{version}")
         
         if silent_pkgs and other_pkgs:
-            lines.append("╠" + "═" * width + "╣")
+            lines.append("")
         
         if other_pkgs:
-            lines.append(f"║  📚 其他库 ({len(other_pkgs)} 个):".ljust(width) + "║")
-            # 只显示前 20 个，避免太长
-            display = other_pkgs[:20]
-            for i, pkg in enumerate(display):
+            lines.append(f"📚 其他库 ({len(other_pkgs)} 个):")
+            if show_all:
+                display = other_pkgs
+            else:
+                display = other_pkgs[:10]
+                if len(other_pkgs) > 10:
+                    lines.append(f"  (显示前 10 个，共 {len(other_pkgs)} 个，使用 -a 查看全部)")
+            
+            for pkg in display:
                 name = pkg.get("name", "")
                 version = pkg.get("version", "未知")
-                prefix = "    ├─ " if i < len(display) - 1 else "    └─ "
-                lines.append(f"║  {prefix}{name}".ljust(width - 20) + f"v{version}".rjust(20) + "║")
+                lines.append(f"  {name}  v{version}")
             
-            if len(other_pkgs) > 20:
-                lines.append(f"║    ... 还有 {len(other_pkgs) - 20} 个".ljust(width) + "║")
-        
-        lines.append("╚" + "═" * width + "╝")
+            if not show_all and len(other_pkgs) > 10:
+                lines.append(f"  ... 还有 {len(other_pkgs) - 10} 个")
     
     else:
-        lines.append("╔" + "═" * width + "╗")
-        lines.append("║" + " 📦 Installed Python Packages".ljust(width) + "║")
-        lines.append("╠" + "═" * width + "╣")
+        lines.append(f"📦 Installed Python Packages (total: {len(all_pkgs)})")
+        lines.append("")
         
         if silent_pkgs:
-            lines.append(f"║  ✦ Installed via SilentStudio ({len(silent_pkgs)}):".ljust(width) + "║")
+            lines.append(f"✦ Installed via SilentStudio ({len(silent_pkgs)}):")
             for i, pkg in enumerate(silent_pkgs):
                 name = pkg.get("name", "")
                 version = pkg.get("version", "unknown")
-                prefix = "    ├─ " if i < len(silent_pkgs) - 1 else "    └─ "
-                lines.append(f"║  {prefix}{name}".ljust(width - 20) + f"v{version}".rjust(20) + "║")
+                lines.append(f"  {name}  v{version}")
         
         if silent_pkgs and other_pkgs:
-            lines.append("╠" + "═" * width + "╣")
+            lines.append("")
         
         if other_pkgs:
-            lines.append(f"║  📚 Other packages ({len(other_pkgs)}):".ljust(width) + "║")
-            display = other_pkgs[:20]
-            for i, pkg in enumerate(display):
+            lines.append(f"📚 Other packages ({len(other_pkgs)}):")
+            if show_all:
+                display = other_pkgs
+            else:
+                display = other_pkgs[:10]
+                if len(other_pkgs) > 10:
+                    lines.append(f"  (showing first 10 of {len(other_pkgs)}, use -a to show all)")
+            
+            for pkg in display:
                 name = pkg.get("name", "")
                 version = pkg.get("version", "unknown")
-                prefix = "    ├─ " if i < len(display) - 1 else "    └─ "
-                lines.append(f"║  {prefix}{name}".ljust(width - 20) + f"v{version}".rjust(20) + "║")
+                lines.append(f"  {name}  v{version}")
             
-            if len(other_pkgs) > 20:
-                lines.append(f"║    ... and {len(other_pkgs) - 20} more".ljust(width) + "║")
-        
-        lines.append("╚" + "═" * width + "╝")
+            if not show_all and len(other_pkgs) > 10:
+                lines.append(f"  ... and {len(other_pkgs) - 10} more")
     
     return "\n".join(lines)
 
 
-def handle_list_packages() -> int:
+def handle_list_packages(show_all: bool = False) -> int:
     """处理 list 命令"""
     try:
-        print(format_package_list())
+        print(format_package_list(show_all))
         return 0
     except Exception as e:
         lang = get_system_language()

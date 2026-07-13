@@ -1,0 +1,82 @@
+# SilentStudio English language file
+
+# ===== General =====
+app_title = SilentStudio - Package Manager
+app_name = SilentStudio
+loading = Loading...
+ready = Ready
+search_placeholder = 🔍 Search package name...
+no_packages = No packages found
+total_packages = Total {count} packages
+
+# ===== Navigation =====
+nav_home=Home
+nav_packages = Packages
+nav_settings = Settings
+
+# ===== Package Card =====
+installed = ✓ Installed
+not_installed = ✗ Not installed
+updatable = ⬆️ Update available
+no_description = No description
+install_btn = 📦 Install
+uninstall_btn = 🗑 Uninstall
+update_btn = ⬆️ Update
+detail_btn = 📄 Details
+double_click_tip = Double click for details
+
+# ===== Package Details =====
+detail_title = {name} - Details
+detail_status = Status
+detail_version = Version
+detail_latest_version = Latest Version
+detail_description = Description
+detail_author = Author
+detail_license = License
+detail_homepage = Homepage
+detail_installed_path = Installed Path
+detail_unknown = Unknown
+detail_not_installed = Not installed
+detail_none = None
+
+# ===== Install Dialog =====
+install_dialog_title = Installing {name}
+installing = Installing {name}...
+install_success = ✅ {name} installed successfully
+install_failed = ❌ Installation failed
+close_btn = Close
+querying_index = 📡 Querying SilentStudio index...
+installing_pkg = 📦 Installing {name}...
+error_prefix = Error
+
+# ===== Actions =====
+action_installing = {action}...
+action_complete = ✅ {action} completed
+action_failed = ❌ {action} failed
+action_success_content = {action} succeeded!
+action_failed_content = {action} failed: {error}
+
+# ===== Confirm Dialogs =====
+confirm_uninstall_title = Confirm Uninstall
+confirm_uninstall_msg = Are you sure you want to uninstall {name}?
+confirm_update_title = Confirm Update
+confirm_update_msg = Are you sure you want to update {name}?
+
+# ===== Settings Page =====
+settings_title = ⚙️ Settings
+settings_language = 🌐 Language
+settings_mirror = 📦 PyPI Mirror
+settings_auto_check = 🔄 Auto-check updates
+settings_auto_install = 📥 Auto-install updates
+settings_check_interval = ⏱ Check interval
+settings_hours = hours
+settings_save_btn = 💾 Save Settings
+settings_saved_title = Settings Saved
+settings_saved_content = Settings saved successfully!
+settings_mirror_placeholder = https://pypi.org/simple
+
+# ===== Status Bar =====
+status_loading_packages = Loading package list...
+status_loading_progress = Loading... {current}/{total}
+status_loaded = Loaded {total} packages
+status_refreshing = {action}...

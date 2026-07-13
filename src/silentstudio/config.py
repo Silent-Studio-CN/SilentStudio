@@ -27,7 +27,7 @@ def get_cache_file() -> Path:
 DEFAULT_CONFIG = {
     "language": "auto",  # auto / zh-CN / en-US
     "pypi_mirror": "https://pypi.org/simple/",
-    "index_url": "https://raw.githubusercontent.com/Silent-Studio-CN/index/main/index.jsonl",
+    "index_url": "https://gh-proxy.com/https://raw.githubusercontent.com/Silent-Studio-CN/index/main/index.jsonl",
     "install_scope": "user",  # user / system
 }
 

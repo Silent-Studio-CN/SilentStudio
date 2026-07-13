@@ -1,13 +1,13 @@
 import json
 import sys
-from typing import Optional, Dict, Any, Tuple
+from typing import Optional, Tuple
 
 import requests
 
 from .config import load_config, load_installed, save_installed
 from .utils import (
-    get_system_language,
     run_pip_command,
+    get_system_language,
     check_package_installed,
     get_package_version,
 )
@@ -55,12 +55,10 @@ def install_package(pkg_name: str, channel: str = "pypi") -> Tuple[bool, str]:
     scope = config.get("install_scope", "user")
     
     if channel == "pypi":
-        success, stdout, stderr = run_pip_command(
-            ["install", pkg_name],
-            scope=scope
-        )
+        pip_args = ["install", pkg_name]
+        success, stdout, stderr = run_pip_command(pip_args, scope)
+        
         if success:
-            # 记录安装
             version = get_package_version(pkg_name)
             if version:
                 record_installation(pkg_name, version, "pypi")
@@ -114,7 +112,6 @@ def handle_install(pkg_name: str, lang: str) -> int:
         if entry.get("name", "").lower() == pkg_name.lower():
             matched = entry
             break
-        # 也通过 pkg_name 匹配
         if entry.get("pkg_name", "").lower() == pkg_name.lower():
             matched = entry
             break
