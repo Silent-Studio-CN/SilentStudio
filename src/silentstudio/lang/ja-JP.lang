@@ -1,0 +1,139 @@
+# SilentStudio 日本語言語ファイル
+
+# ===== CLI 一般 =====
+cli_title = SilentStudio CLI v{version}
+cli_copyright = © SilentStudio All Rights Reserved.
+cli_homepage = https://github.com/Silent-Studio-CN/SilentStudioCLI
+cli_help_hint = ヘルプを表示するには -h または --help を使用してください
+cli_help_hint_en = ヘルプを表示するには -h または --help を使用してください
+cli_making = 開発者体験をより良くします。
+cli_making_en = 開発者体験をより良くします。
+cli_usage = 使用方法:
+cli_examples = 例:
+cli_more_info = 詳細情報:
+
+# ===== CLI コマンド =====
+cmd_help = このヘルプを表示
+cmd_version = バージョンを表示
+cmd_window = GUIを起動（0.1.5では未サポート）
+cmd_new = 新規プロジェクトを作成
+cmd_install_pkg = パッケージを検索してインストール
+cmd_install_list = インストール済みパッケージを一覧表示
+cmd_install_list_all = すべてのインストール済みパッケージを一覧表示
+cmd_install_pkg_specific = 指定したパッケージをインストール
+cmd_uninstall = パッケージをアンインストール
+cmd_ping = インデックスソースの可用性を確認
+cmd_ls = カレントディレクトリを一覧表示
+cmd_dir = カレントディレクトリを一覧表示（Windows）
+cmd_pwd = カレントディレクトリを表示
+
+# ===== CLI 例 =====
+example_new = silentstudio new my-app -l java
+example_install = silentstudio slimemold
+example_list = silentstudio install list
+example_install_yaml = silentstudio install yaml
+example_uninstall = silentstudio uninstall requests
+example_ping = silentstudio ping
+example_ls = silentstudio ls
+
+# ===== CLI アンインストール警告 =====
+uninstall_warning_title = ⚠️ 警告: {pkg} は SilentStudio のコア依存関係です
+uninstall_warning_desc = アンインストール後、SilentStudio は正常に動作しなくなります
+uninstall_warning_continue = 続行しますか？ (y/N): 
+uninstall_cancelled = ❌ キャンセルしました
+uninstall_success = ✅ {pkg} をアンインストールしました
+uninstall_failed = ❌ アンインストールに失敗しました: {error}
+uninstall_tip = 💡 ヒント: SilentStudio が動作しない場合は、次を実行してください: pip install {pkg}
+
+# ===== CLI ping =====
+ping_detecting = 📡 インデックスソースの可用性を確認中...
+ping_response = 応答時間: {time}ms | ステータス: {code}
+ping_error = エラー: {error}
+ping_available = ✅ 利用可能: {count}
+ping_unavailable = ❌ 利用不可: {count}
+ping_recommend = 💡 推奨: {url}
+ping_no_available = ❌ 利用可能なインデックスソースがありません
+
+# ===== CLI ls =====
+ls_total = 合計 {count} アイテム
+ls_error = ❌ ディレクトリの一覧表示に失敗しました: {error}
+
+# ===== GUI 一般 =====
+gui_title = SilentStudio - パッケージマネージャー
+gui_loading = 読み込み中...
+gui_ready = 準備完了
+gui_search = 🔍 パッケージ名を検索...
+gui_no_packages = パッケージが見つかりません
+gui_total = 合計 {count} パッケージ
+
+# ===== GUI ナビゲーション =====
+gui_nav_home = ホーム
+gui_nav_packages = パッケージ
+gui_nav_settings = 設定
+
+# ===== GUI パッケージカード =====
+gui_installed = ✓ インストール済み
+gui_not_installed = ✗ 未インストール
+gui_updatable = ⬆️ アップデートあり
+gui_no_description = 説明なし
+gui_install = 📦 インストール
+gui_uninstall = 🗑 アンインストール
+gui_update = ⬆️ アップデート
+gui_detail = 📄 詳細
+gui_double_click = ダブルクリックで詳細表示
+
+# ===== GUI パッケージ詳細 =====
+gui_detail_title = {name} - 詳細
+gui_detail_status = ステータス
+gui_detail_version = バージョン
+gui_detail_latest = 最新バージョン
+gui_detail_description = 説明
+gui_detail_author = 作者
+gui_detail_license = ライセンス
+gui_detail_homepage = ホームページ
+gui_detail_path = インストールパス
+gui_detail_unknown = 不明
+gui_detail_not_installed = 未インストール
+gui_detail_none = なし
+
+# ===== GUI インストールダイアログ =====
+gui_install_title = {name} をインストール中
+gui_installing = {name} をインストール中...
+gui_install_success = ✅ {name} のインストールが完了しました
+gui_install_failed = ❌ インストールに失敗しました
+gui_close = 閉じる
+gui_querying = 📡 SilentStudio インデックスを照会中...
+gui_installing_pkg = 📦 {name} をインストール中...
+gui_error = エラー
+
+# ===== GUI アクション =====
+gui_action_installing = {action}...
+gui_action_complete = ✅ {action} が完了しました
+gui_action_failed = ❌ {action} に失敗しました
+gui_action_success = {action} が成功しました！
+gui_action_failed_msg = {action} に失敗しました: {error}
+
+# ===== GUI 確認 =====
+gui_confirm_uninstall_title = アンインストールの確認
+gui_confirm_uninstall_msg = {name} をアンインストールしてもよろしいですか？
+gui_confirm_update_title = アップデートの確認
+gui_confirm_update_msg = {name} をアップデートしてもよろしいですか？
+
+# ===== GUI 設定 =====
+gui_settings_title = ⚙️ 設定
+gui_settings_language = 🌐 言語
+gui_settings_mirror = 📦 PyPI ミラー
+gui_settings_auto_check = 🔄 アップデートを自動チェック
+gui_settings_auto_install = 📥 アップデートを自動インストール
+gui_settings_interval = ⏱ チェック間隔
+gui_settings_hours = 時間
+gui_settings_save = 💾 設定を保存
+gui_settings_saved_title = 設定を保存しました
+gui_settings_saved_content = 設定が正常に保存されました！
+gui_settings_mirror_placeholder = https://pypi.org/simple
+
+# ===== GUI ステータスバー =====
+gui_status_loading = パッケージリストを読み込み中...
+gui_status_progress = 読み込み中... {current}/{total}
+gui_status_loaded = {total} パッケージを読み込みました
+gui_status_refreshing = {action}...

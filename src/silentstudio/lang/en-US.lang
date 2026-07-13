@@ -1,82 +1,139 @@
 # SilentStudio English language file
 
-# ===== General =====
-app_title = SilentStudio - Package Manager
-app_name = SilentStudio
-loading = Loading...
-ready = Ready
-search_placeholder = 🔍 Search package name...
-no_packages = No packages found
-total_packages = Total {count} packages
+# ===== CLI General =====
+cli_title = SilentStudio CLI v{version}
+cli_copyright = © SilentStudio All Rights Reserved.
+cli_homepage = https://github.com/Silent-Studio-CN/SilentStudioCLI
+cli_help_hint = Use -h or --help for full help
+cli_help_hint_en = Use -h or --help for full help
+cli_making = Making developer experience better.
+cli_making_en = Making developer experience better.
+cli_usage = Usage:
+cli_examples = Examples:
+cli_more_info = More info:
 
-# ===== Navigation =====
-nav_home=Home
-nav_packages = Packages
-nav_settings = Settings
+# ===== CLI Commands =====
+cmd_help = Show this help
+cmd_version = Show version
+cmd_window = Launch GUI (not supported in 0.1.5)
+cmd_new = Create new project
+cmd_install_pkg = Query and install package
+cmd_install_list = List installed packages
+cmd_install_list_all = List all installed packages
+cmd_install_pkg_specific = Install specific package
+cmd_uninstall = Uninstall package
+cmd_ping = Check index source availability
+cmd_ls = List current directory
+cmd_dir = List current directory (Windows)
+cmd_pwd = Show current working directory
 
-# ===== Package Card =====
-installed = ✓ Installed
-not_installed = ✗ Not installed
-updatable = ⬆️ Update available
-no_description = No description
-install_btn = 📦 Install
-uninstall_btn = 🗑 Uninstall
-update_btn = ⬆️ Update
-detail_btn = 📄 Details
-double_click_tip = Double click for details
+# ===== CLI Examples =====
+example_new = silentstudio new my-app -l java
+example_install = silentstudio slimemold
+example_list = silentstudio install list
+example_install_yaml = silentstudio install yaml
+example_uninstall = silentstudio uninstall requests
+example_ping = silentstudio ping
+example_ls = silentstudio ls
 
-# ===== Package Details =====
-detail_title = {name} - Details
-detail_status = Status
-detail_version = Version
-detail_latest_version = Latest Version
-detail_description = Description
-detail_author = Author
-detail_license = License
-detail_homepage = Homepage
-detail_installed_path = Installed Path
-detail_unknown = Unknown
-detail_not_installed = Not installed
-detail_none = None
+# ===== CLI Uninstall Warning =====
+uninstall_warning_title = ⚠️ Warning: {pkg} is a core dependency of SilentStudio
+uninstall_warning_desc = SilentStudio will not work properly after uninstallation
+uninstall_warning_continue = Continue? (y/N): 
+uninstall_cancelled = ❌ Cancelled
+uninstall_success = ✅ Successfully uninstalled {pkg}
+uninstall_failed = ❌ Uninstall failed: {error}
+uninstall_tip = 💡 Tip: If SilentStudio malfunctions, run: pip install {pkg}
 
-# ===== Install Dialog =====
-install_dialog_title = Installing {name}
-installing = Installing {name}...
-install_success = ✅ {name} installed successfully
-install_failed = ❌ Installation failed
-close_btn = Close
-querying_index = 📡 Querying SilentStudio index...
-installing_pkg = 📦 Installing {name}...
-error_prefix = Error
+# ===== CLI ping =====
+ping_detecting = 📡 Checking index source availability...
+ping_response = Response time: {time}ms | Status: {code}
+ping_error = Error: {error}
+ping_available = ✅ Available: {count}
+ping_unavailable = ❌ Unavailable: {count}
+ping_recommend = 💡 Recommended: {url}
+ping_no_available = ❌ No available index sources
 
-# ===== Actions =====
-action_installing = {action}...
-action_complete = ✅ {action} completed
-action_failed = ❌ {action} failed
-action_success_content = {action} succeeded!
-action_failed_content = {action} failed: {error}
+# ===== CLI ls =====
+ls_total = Total {count} items
+ls_error = ❌ Failed to list directory: {error}
 
-# ===== Confirm Dialogs =====
-confirm_uninstall_title = Confirm Uninstall
-confirm_uninstall_msg = Are you sure you want to uninstall {name}?
-confirm_update_title = Confirm Update
-confirm_update_msg = Are you sure you want to update {name}?
+# ===== GUI General =====
+gui_title = SilentStudio - Package Manager
+gui_loading = Loading...
+gui_ready = Ready
+gui_search = 🔍 Search package name...
+gui_no_packages = No packages found
+gui_total = Total {count} packages
 
-# ===== Settings Page =====
-settings_title = ⚙️ Settings
-settings_language = 🌐 Language
-settings_mirror = 📦 PyPI Mirror
-settings_auto_check = 🔄 Auto-check updates
-settings_auto_install = 📥 Auto-install updates
-settings_check_interval = ⏱ Check interval
-settings_hours = hours
-settings_save_btn = 💾 Save Settings
-settings_saved_title = Settings Saved
-settings_saved_content = Settings saved successfully!
-settings_mirror_placeholder = https://pypi.org/simple
+# ===== GUI Navigation =====
+gui_nav_home = Home
+gui_nav_packages = Packages
+gui_nav_settings = Settings
 
-# ===== Status Bar =====
-status_loading_packages = Loading package list...
-status_loading_progress = Loading... {current}/{total}
-status_loaded = Loaded {total} packages
-status_refreshing = {action}...
+# ===== GUI Package Card =====
+gui_installed = ✓ Installed
+gui_not_installed = ✗ Not installed
+gui_updatable = ⬆️ Update available
+gui_no_description = No description
+gui_install = 📦 Install
+gui_uninstall = 🗑 Uninstall
+gui_update = ⬆️ Update
+gui_detail = 📄 Details
+gui_double_click = Double click for details
+
+# ===== GUI Package Details =====
+gui_detail_title = {name} - Details
+gui_detail_status = Status
+gui_detail_version = Version
+gui_detail_latest = Latest Version
+gui_detail_description = Description
+gui_detail_author = Author
+gui_detail_license = License
+gui_detail_homepage = Homepage
+gui_detail_path = Install Path
+gui_detail_unknown = Unknown
+gui_detail_not_installed = Not installed
+gui_detail_none = None
+
+# ===== GUI Install Dialog =====
+gui_install_title = Installing {name}
+gui_installing = Installing {name}...
+gui_install_success = ✅ {name} installed successfully
+gui_install_failed = ❌ Installation failed
+gui_close = Close
+gui_querying = 📡 Querying SilentStudio index...
+gui_installing_pkg = 📦 Installing {name}...
+gui_error = Error
+
+# ===== GUI Actions =====
+gui_action_installing = {action}...
+gui_action_complete = ✅ {action} completed
+gui_action_failed = ❌ {action} failed
+gui_action_success = {action} succeeded!
+gui_action_failed_msg = {action} failed: {error}
+
+# ===== GUI Confirm =====
+gui_confirm_uninstall_title = Confirm Uninstall
+gui_confirm_uninstall_msg = Are you sure you want to uninstall {name}?
+gui_confirm_update_title = Confirm Update
+gui_confirm_update_msg = Are you sure you want to update {name}?
+
+# ===== GUI Settings =====
+gui_settings_title = ⚙️ Settings
+gui_settings_language = 🌐 Language
+gui_settings_mirror = 📦 PyPI Mirror
+gui_settings_auto_check = 🔄 Auto-check updates
+gui_settings_auto_install = 📥 Auto-install updates
+gui_settings_interval = ⏱ Check interval
+gui_settings_hours = hours
+gui_settings_save = 💾 Save Settings
+gui_settings_saved_title = Settings Saved
+gui_settings_saved_content = Settings saved successfully!
+gui_settings_mirror_placeholder = https://pypi.org/simple
+
+# ===== GUI Status Bar =====
+gui_status_loading = Loading package list...
+gui_status_progress = Loading... {current}/{total}
+gui_status_loaded = Loaded {total} packages
+gui_status_refreshing = {action}...

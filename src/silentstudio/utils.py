@@ -17,29 +17,8 @@ SUPPORTED_LANGS = {
 
 def detect_system_language() -> str:
     """检测系统语言"""
-    try:
-        lang = locale.getdefaultlocale()[0]
-        if lang:
-            # 标准化语言代码
-            if lang.startswith("zh"):
-                return "zh-CN"
-            elif lang.startswith("en"):
-                return "en-US"
-            elif lang.startswith("ja"):
-                return "ja-JP"
-            elif lang.startswith("ru"):
-                return "ru-RU"
-            elif lang.startswith("ko"):
-                return "ko-KR"
-            elif lang.startswith("fr"):
-                return "fr-FR"
-            elif lang.startswith("de"):
-                return "de-DE"
-            elif lang.startswith("es"):
-                return "es-ES"
-    except:
-        pass
-    return "en-US"
+    # 临时强制中文
+    return "zh-CN"
 
 
 def get_lang_file_path(lang_code: str) -> Path:
@@ -136,10 +115,14 @@ search_placeholder=🔍 Search package name...
 
 def get_system_language(config_lang: str = "auto") -> str:
     """获取最终使用的语言（兼容旧接口）"""
+    print(f"🔍 DEBUG: config_lang = {config_lang}")  # 加这行
     if config_lang == "auto":
-        return ensure_language("auto")
-    return ensure_language(config_lang)
-
+        result = ensure_language("auto")
+        print(f"🔍 DEBUG: result = {result}")  # 加这行
+        return result
+    result = ensure_language(config_lang)
+    print(f"🔍 DEBUG: result = {result}")
+    return result
 
 def run_pip_command(args: list, scope: str = "user") -> Tuple[bool, str, str]:
     """执行 pip 命令"""
@@ -181,6 +164,7 @@ def get_package_version(pkg_name: str) -> Optional[str]:
 def check_package_installed(pkg_name: str) -> bool:
     """检查包是否已安装"""
     return get_package_version(pkg_name) is not None
+
 
 def get_pip_packages() -> list:
     """获取所有已安装的 pip 包"""

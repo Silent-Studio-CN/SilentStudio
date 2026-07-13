@@ -1,7 +1,7 @@
 import subprocess
 import sys
 
-__version__ = "0.1.5"
+__version__ = "0.1.6"
 __author__ = "SilentStudio"
 __description__ = "SilentStudio CLI - 让开发者体验更好一点"
 

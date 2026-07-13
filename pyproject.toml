@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "silentstudio"
-version = "0.1.5"
+version = "0.1.6"
 description = "SilentStudio CLI - 让开发者体验更好一点"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -22,7 +22,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-window = ["PySide6>=6.4.0"]
+window = [
+    "PySide6>=6.4.0",
+    "PySide6-Fluent-Widgets[full]>=1.0.0",
+]
 
 [project.scripts]
 silentstudio = "silentstudio.cli:main"

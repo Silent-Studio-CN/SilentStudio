@@ -1,0 +1,139 @@
+# SilentStudio Русский языковой файл
+
+# ===== CLI Общее =====
+cli_title = SilentStudio CLI v{version}
+cli_copyright = © SilentStudio All Rights Reserved.
+cli_homepage = https://github.com/Silent-Studio-CN/SilentStudioCLI
+cli_help_hint = Используйте -h или --help для полной справки
+cli_help_hint_en = Используйте -h или --help для полной справки
+cli_making = Улучшаем опыт разработчика.
+cli_making_en = Улучшаем опыт разработчика.
+cli_usage = Использование:
+cli_examples = Примеры:
+cli_more_info = Подробнее:
+
+# ===== CLI Команды =====
+cmd_help = Показать эту справку
+cmd_version = Показать версию
+cmd_window = Запустить GUI (не поддерживается в 0.1.5)
+cmd_new = Создать новый проект
+cmd_install_pkg = Найти и установить пакет
+cmd_install_list = Список установленных пакетов
+cmd_install_list_all = Список всех установленных пакетов
+cmd_install_pkg_specific = Установить указанный пакет
+cmd_uninstall = Удалить пакет
+cmd_ping = Проверить доступность источников индекса
+cmd_ls = Список содержимого текущей директории
+cmd_dir = Список содержимого текущей директории (Windows)
+cmd_pwd = Показать текущую рабочую директорию
+
+# ===== CLI Примеры =====
+example_new = silentstudio new my-app -l java
+example_install = silentstudio slimemold
+example_list = silentstudio install list
+example_install_yaml = silentstudio install yaml
+example_uninstall = silentstudio uninstall requests
+example_ping = silentstudio ping
+example_ls = silentstudio ls
+
+# ===== CLI Предупреждение об удалении =====
+uninstall_warning_title = ⚠️ Предупреждение: {pkg} является основным зависимостью SilentStudio
+uninstall_warning_desc = После удаления SilentStudio не будет работать корректно
+uninstall_warning_continue = Продолжить? (y/N): 
+uninstall_cancelled = ❌ Отменено
+uninstall_success = ✅ {pkg} успешно удалён
+uninstall_failed = ❌ Ошибка удаления: {error}
+uninstall_tip = 💡 Совет: Если SilentStudio не работает, выполните: pip install {pkg}
+
+# ===== CLI ping =====
+ping_detecting = 📡 Проверка доступности источников индекса...
+ping_response = Время ответа: {time}мс | Статус: {code}
+ping_error = Ошибка: {error}
+ping_available = ✅ Доступно: {count}
+ping_unavailable = ❌ Недоступно: {count}
+ping_recommend = 💡 Рекомендуется: {url}
+ping_no_available = ❌ Нет доступных источников индекса
+
+# ===== CLI ls =====
+ls_total = Всего {count} элементов
+ls_error = ❌ Ошибка при выводе директории: {error}
+
+# ===== GUI Общее =====
+gui_title = SilentStudio - Менеджер пакетов
+gui_loading = Загрузка...
+gui_ready = Готово
+gui_search = 🔍 Поиск пакета...
+gui_no_packages = Пакеты не найдены
+gui_total = Всего {count} пакетов
+
+# ===== GUI Навигация =====
+gui_nav_home = Главная
+gui_nav_packages = Пакеты
+gui_nav_settings = Настройки
+
+# ===== GUI Карточка пакета =====
+gui_installed = ✓ Установлен
+gui_not_installed = ✗ Не установлен
+gui_updatable = ⬆️ Доступно обновление
+gui_no_description = Нет описания
+gui_install = 📦 Установить
+gui_uninstall = 🗑 Удалить
+gui_update = ⬆️ Обновить
+gui_detail = 📄 Подробности
+gui_double_click = Двойной клик для подробностей
+
+# ===== GUI Подробности пакета =====
+gui_detail_title = {name} - Подробности
+gui_detail_status = Статус
+gui_detail_version = Версия
+gui_detail_latest = Последняя версия
+gui_detail_description = Описание
+gui_detail_author = Автор
+gui_detail_license = Лицензия
+gui_detail_homepage = Сайт
+gui_detail_path = Путь установки
+gui_detail_unknown = Неизвестно
+gui_detail_not_installed = Не установлен
+gui_detail_none = Нет
+
+# ===== GUI Диалог установки =====
+gui_install_title = Установка {name}
+gui_installing = Установка {name}...
+gui_install_success = ✅ {name} успешно установлен
+gui_install_failed = ❌ Ошибка установки
+gui_close = Закрыть
+gui_querying = 📡 Запрос индекса SilentStudio...
+gui_installing_pkg = 📦 Установка {name}...
+gui_error = Ошибка
+
+# ===== GUI Действия =====
+gui_action_installing = {action}...
+gui_action_complete = ✅ {action} завершено
+gui_action_failed = ❌ {action} не удалось
+gui_action_success = {action} успешно!
+gui_action_failed_msg = {action} не удалось: {error}
+
+# ===== GUI Подтверждение =====
+gui_confirm_uninstall_title = Подтверждение удаления
+gui_confirm_uninstall_msg = Вы уверены, что хотите удалить {name}?
+gui_confirm_update_title = Подтверждение обновления
+gui_confirm_update_msg = Вы уверены, что хотите обновить {name}?
+
+# ===== GUI Настройки =====
+gui_settings_title = ⚙️ Настройки
+gui_settings_language = 🌐 Язык
+gui_settings_mirror = 📦 Зеркало PyPI
+gui_settings_auto_check = 🔄 Автоматическая проверка обновлений
+gui_settings_auto_install = 📥 Автоматическая установка обновлений
+gui_settings_interval = ⏱ Интервал проверки
+gui_settings_hours = часов
+gui_settings_save = 💾 Сохранить настройки
+gui_settings_saved_title = Настройки сохранены
+gui_settings_saved_content = Настройки успешно сохранены!
+gui_settings_mirror_placeholder = https://pypi.org/simple
+
+# ===== GUI Строка состояния =====
+gui_status_loading = Загрузка списка пакетов...
+gui_status_progress = Загрузка... {current}/{total}
+gui_status_loaded = Загружено {total} пакетов
+gui_status_refreshing = {action}...
